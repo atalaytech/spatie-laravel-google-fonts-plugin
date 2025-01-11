@@ -10,6 +10,6 @@ class SpatieGoogleFontProvider implements Contracts\FontProvider
 {
     public function getHtml(string $family, ?string $url = null): Htmlable
     {
-        return new HtmlString(Blade::render('@googlefonts'));
+        return new HtmlString(Blade::render('@googlefonts' . '("' . app(\App\Settings\ThemeSettings::class)->font . '")'));
     }
 }
